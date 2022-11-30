@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/Chummy-Notes/static/css/main.df05953b.css",
+    "main.js": "/Chummy-Notes/static/js/main.bee6c887.js",
+    "static/media/flower.png": "/Chummy-Notes/static/media/flower.06e69f1a42e81f5cf22b.png",
+    "static/media/DarkBackgroun1.jpg": "/Chummy-Notes/static/media/DarkBackgroun1.aa3e2c560684aabcf395.jpg",
+    "static/media/light.jpg": "/Chummy-Notes/static/media/light.70fd96e81a8d3f5eea28.jpg",
+    "static/media/arrow-down.png": "/Chummy-Notes/static/media/arrow-down.037532c84730162db171.png",
+    "index.html": "/Chummy-Notes/index.html",
+    "main.df05953b.css.map": "/Chummy-Notes/static/css/main.df05953b.css.map",
+    "main.bee6c887.js.map": "/Chummy-Notes/static/js/main.bee6c887.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.df05953b.css",
+    "static/js/main.bee6c887.js"
+  ]
+}
