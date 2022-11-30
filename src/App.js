@@ -1,23 +1,37 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import AddNote from './components/AddNote';
+import Navbar from './components/Navbar';
+import Search from './components/Search';
+import darkBackground from './components/images/DarkBackgroun1.jpg';
+import lightBackground from './components/images/light.jpg';
 
 function App() {
+  const [darkMode, setDarkMode] = React.useState(() => {
+    const DM = JSON.parse(localStorage.getItem("mode"));
+    return DM ? DM : false;
+  });
+
+  const [search, setSearch] = useState("");
+
+  useEffect(() => {
+    localStorage.setItem("mode", JSON.stringify(darkMode))
+  }, [darkMode])
+
+  const toggleDarkMode = () => {
+    setDarkMode(prevMode => !prevMode)
+  }
+  document.body.style.backgroundImage = darkMode ? `url(${darkBackground})` : `url(${lightBackground})`;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <Navbar
+        darkMode={darkMode}
+        toggleDarkMode={toggleDarkMode}
+      />
+      <Search handleSearch={setSearch} darkMode={darkMode}/>
+      <div className='Notes'>
+        <AddNote search={search} darkMode={darkMode} />
+      </div>
     </div>
   );
 }
